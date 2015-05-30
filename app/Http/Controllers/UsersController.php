@@ -2,9 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
+
 class UsersController extends Controller
 {
 
+    //Realizando consultas mediante Eloquent
+    public function getOrm()
+    {
+        $result = User::first(); //Extraemos el primer registro de la BD
+
+        dd($result->full_name);
+        //dd($result->getFullNameAttribute());
+    }
+
+
+    //Realizando consultas mediante Fluent
     public function getIndex()
     {
         $result = \DB::table('users')
