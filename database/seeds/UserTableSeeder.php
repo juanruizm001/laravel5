@@ -11,7 +11,7 @@ class UserTableSeeder extends Seeder {
 
         for ($i = 0; $i < 30; $i ++)
         {
-            \DB::table('users')->insert(array(
+            $id = \DB::table('users')->insertGetId(array(
                 'first_name'    => $faker->firstName,
                 'last_name'     => $faker->lastName,
                 'email'         => $faker->unique()->email,
@@ -19,6 +19,12 @@ class UserTableSeeder extends Seeder {
                 'type'          => 'user'
             ));
 
+            \DB::table('user_profiles')->insert(array(
+                'user_id'   => $id,
+                'bio'       => $faker->paragraph(rand(2, 5)),
+                'website'   => 'http://www.' . $faker->domainName,
+                'twitter'   => 'http://www.twitter.com/' . $faker->userName
+            ));
 
         }
 
