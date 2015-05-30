@@ -13,6 +13,11 @@ class AdminTableSeeder extends Seeder {
             'password'      => \Hash::make('123'),
             'type'          => 'admin'
         ));
+
+        \DB::table('user_profiles')->insert(array(
+            'user_id'   => 1,
+            'birthdate' => '1985/02/20'
+        ));
     }
 
 }
