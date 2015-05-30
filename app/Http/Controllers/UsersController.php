@@ -10,9 +10,9 @@ class UsersController extends Controller
     //Realizando consultas mediante Eloquent
     public function getOrm()
     {
-        $result = User::first(); //Extraemos el primer registro de la BD
+        $user = User::first(); //Extraemos el primer registro de la BD
 
-        dd($result->full_name);
+        dd($user->profile->age);
         //dd($result->getFullNameAttribute());
     }
 
