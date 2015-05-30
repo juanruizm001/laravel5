@@ -8,7 +8,7 @@ class AdminTableSeeder extends Seeder {
     {
         \DB::table('users')->insert(array(
             'first_name'    => 'Juan',
-            'last_name'     => 'Juan',
+            'last_name'     => 'Ruiz',
             'email'         => 'juanr@gmail.com',
             'password'      => \Hash::make('123'),
             'type'          => 'admin'
