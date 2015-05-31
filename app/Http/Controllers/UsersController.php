@@ -12,7 +12,9 @@ class UsersController extends Controller
     {
         //$user = User::first(); //Extraemos el primer registro de la BD
         //$users = User::get(); //Extraemos todos los usuarios
-        $users = User::where('first_name', '<>', 'Juan')
+        $users = User::select('id', 'first_name') //Seleccionamos las columnas que queremos sean devueltas
+            ->with('profile') //Además traeremos los registros de la tabla de perfiles, incluyendo el metodo 'profile', declarado en el archivo User.php
+            ->where('first_name', '<>', 'Juan')
             ->orderBy('first_name', 'ASC')
             ->get(); //Condicionamos la busqueda a todos los registros donde el nombre no sea Juan
 
