@@ -20,3 +20,7 @@ Route::controllers([
     'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::get('example', function() {
+    return view('examples.template');
+});
