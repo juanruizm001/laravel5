@@ -11,11 +11,14 @@ class UsersController extends Controller
     public function getOrm()
     {
         //$user = User::first(); //Extraemos el primer registro de la BD
-        $users = User::get();
+        //$users = User::get(); //Extraemos todos los usuarios
+        $users = User::where('first_name', '<>', 'Juan')
+            ->orderBy('first_name', 'ASC')
+            ->get(); //Condicionamos la busqueda a todos los registros donde el nombre no sea Juan
 
         //dd($user->profile->age);
         //dd($result->getFullNameAttribute());
-        dd($users);
+        dd($users->toArray());
     }
 
 
