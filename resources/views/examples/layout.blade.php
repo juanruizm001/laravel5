@@ -2,14 +2,14 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Trabajando con Laravel 5</title>
+    <title>@yield('title', 'Trabajando con Laravel 5')</title>
 </head>
 <body>
 
-<h1>Trabajando con Laravel 5</h1>
-<p>
-    Bienvenido.
-</p>
+@yield('content')
+
+
+<hr>
 <p class="bottom">http://test.com</p>
 
 </body>
