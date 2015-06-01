@@ -21,10 +21,18 @@ Route::controllers([
 	'password' => 'Auth\PasswordController',
 ]);
 
+/*
 Route::get('example', function() {
 
     $user = 'Juan'; //Usaremos la variable $user para pasarla a la vista
 
     //return View::make('examples.template', compact('user')); //Antes se usaba esta forma para mostrar la vista, pero se cambio por la funcion view
     return view('examples.template', compact('user'));
+});
+*/
+
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function() {
+
+    Route::resource('users', 'UsersController');
+
 });

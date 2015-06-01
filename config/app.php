@@ -136,6 +136,12 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+        /*
+         * Vendor Service Providers
+         */
+        'Collective\Html\HtmlServiceProvider',
+
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -146,10 +152,6 @@ return [
 		'App\Providers\RouteServiceProvider',
 
 
-        /*
-         * Vendor Service Providers
-         */
-        'Collective\Html\HtmlServiceProvider',
 
 	],
 
