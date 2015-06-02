@@ -4,7 +4,8 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-use Illuminate\Support\Facades\Request;
+use Illuminate\Http\Request;
+use Illuminate\Routing\Redirector;
 
 class UsersController extends Controller {
 
@@ -36,9 +37,13 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store()
+	public function store(Request $request, Redirector $redirect)
 	{
-        dd(Request::all());
+        //dd($request->all()); Para mostrar lo enviado por el formulario
+        $user = new User($request->all());
+        $user->save();
+
+        return $redirect->route('admin.users.index');
 	}
 
 	/**

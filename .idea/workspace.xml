@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd304fe-da69-4ab9-93e3-be8b820d25a8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="laravel5.iws" />
@@ -33,7 +32,7 @@
       <file leaf-file-name="routes.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Http/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="442" max-vertical-offset="578">
+            <state vertical-scroll-proportion="-0.0" vertical-offset="442" max-vertical-offset="578">
               <caret line="35" column="35" selection-start-line="35" selection-start-column="35" selection-end-line="35" selection-end-column="35" />
               <folding />
             </state>
@@ -43,8 +42,8 @@
       <file leaf-file-name="UsersController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.39963832" vertical-offset="459" max-vertical-offset="1598">
-              <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.6455696" vertical-offset="391" max-vertical-offset="1683">
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#45#67#0#PHP" expanded="true" />
               </folding>
@@ -111,7 +110,6 @@
         <option value="$PROJECT_DIR$/database/migrations/2015_05_30_010406_create_user_profiles_table.php" />
         <option value="$PROJECT_DIR$/database/seeds/AdminTableSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/UserTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/UserProfile.php" />
         <option value="$PROJECT_DIR$/resources/views/examples/header.php" />
         <option value="$PROJECT_DIR$/resources/views/examples/footer.php" />
@@ -127,6 +125,7 @@
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/create.blade.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
       </list>
     </option>
@@ -649,16 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.64440435" vertical-offset="204" max-vertical-offset="833">
-          <caret line="33" column="22" selection-start-line="33" selection-start-column="22" selection-end-line="33" selection-end-column="22" />
-          <folding>
-            <element signature="e#22#58#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/storage/framework/views/0aeff9bfd7fb3de2c7fd04c2b29a69ad">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="567">
@@ -808,10 +797,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67777777" vertical-offset="212" max-vertical-offset="850">
+          <caret line="38" column="38" selection-start-line="38" selection-start-column="38" selection-end-line="38" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39963832" vertical-offset="459" max-vertical-offset="1598">
-          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.6455696" vertical-offset="391" max-vertical-offset="1683">
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#45#67#0#PHP" expanded="true" />
           </folding>

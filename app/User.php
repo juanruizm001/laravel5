@@ -22,7 +22,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['name', 'email', 'password'];
+	protected $fillable = ['first_name', 'last_name', 'email', 'password', 'type'];
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -39,5 +39,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
     public function getFullNameAttribute()
     {
         return $this->first_name . ' ' . $this->last_name;
+    }
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = \Hash::make($value); //Con estoy siempre nos aseguraremos que la contraseña sea encriptada
     }
 }
