@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Request;
 
 class UsersController extends Controller {
 
@@ -28,7 +28,7 @@ class UsersController extends Controller {
 	 */
 	public function create()
 	{
-		//
+		return view('admin.users.create');
 	}
 
 	/**
@@ -38,7 +38,7 @@ class UsersController extends Controller {
 	 */
 	public function store()
 	{
-		//
+        dd(Request::all());
 	}
 
 	/**

@@ -6,9 +6,12 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">Usuarios</div>
-
                     <div class="panel-body">
-                        Listado de Usuarios
+                        <p>
+                            <a class="btn btn-info" href="{{ route('admin.users.create') }}" role="button">
+                                Nuevo Usuario
+                            </a>
+                        </p>
                         <p>Hay {{ $users->total() }} registros, distribuidos en {{ $users->lastPage() }} páginas.</p>
                         <table class="table table-striped">
                             <tr>
