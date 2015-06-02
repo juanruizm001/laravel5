@@ -9,7 +9,7 @@
 
                     <div class="panel-body">
                         Listado de Usuarios
-
+                        <p>Hay {{ $users->total() }} registros, distribuidos en {{ $users->lastPage() }} páginas.</p>
                         <table class="table table-striped">
                             <tr>
                                 <th>#</th>
