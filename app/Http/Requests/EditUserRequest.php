@@ -1,8 +1,19 @@
 <?php namespace App\Http\Requests;
 
 use App\Http\Requests\Request;
+use Illuminate\Routing\Route;
 
-class CreateUserRequest extends Request {
+class EditUserRequest extends Request {
+
+    /**
+     * @var Route
+     */
+    private $route;
+
+    public function __construct(Route $route)
+    {
+        $this->route = $route;
+    }
 
 	/**
 	 * Determine if the user is authorized to make this request.
@@ -11,8 +22,7 @@ class CreateUserRequest extends Request {
 	 */
 	public function authorize()
 	{
-        //return false;
-        return true;
+		return true;
 	}
 
 	/**
@@ -22,13 +32,13 @@ class CreateUserRequest extends Request {
 	 */
 	public function rules()
 	{
-		return [
+        return [
             'first_name' => 'required',
             'last_name' => 'required',
-            'email' => 'required|unique:users,email', //Agregamos validacion para que no se dupliquen correos y no se caiga la aplicacion
-            'password' => 'required',
+            'email' => 'required|unique:users,email,' . $this->route->getParameter('users'), //Agregamos validacion para que no se dupliquen correos y no se caiga la aplicacion, excluyendo el correo del usuario que se está editando
+            'password' => '',
             'type' => 'required|in:user,admin' //se agrega validacion in, estableciendo los valores que deben ser aceptados
-		];
+        ];
 	}
 
 }

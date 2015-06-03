@@ -9,6 +9,7 @@ use App\Http\Requests\CreateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\EditUserRequest;
 
 class UsersController extends Controller {
 
@@ -75,10 +76,10 @@ class UsersController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update($id)
+	public function update(EditUserRequest $request, $id)
 	{
         $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
-        $user->fill(Request::all());
+        $user->fill($request->all());
         $user->save();
 
         return redirect()->back(); //Ser devueltos a la pagina anterior, en este caso, la de edicion del usuario
