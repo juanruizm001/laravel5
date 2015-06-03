@@ -4,8 +4,10 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
 use App\User;
-use Illuminate\Http\Request;
-use Illuminate\Routing\Redirector;
+//use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Facades\Validator;
 
 class UsersController extends Controller {
 
@@ -37,13 +39,35 @@ class UsersController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(Request $request, Redirector $redirect)
+	public function store()
 	{
         //dd($request->all()); Para mostrar lo enviado por el formulario
+        /*
         $user = new User($request->all());
         $user->save();
-
         return $redirect->route('admin.users.index');
+        */
+        $data = Request::all();
+        $rules = array(
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
+            'password' => 'required',
+            'type' => 'required'
+        );
+
+        $v = Validator::make($data, $rules);
+
+        if ($v ->fails()) //Verifica si la validacion falla
+        {
+            //dd($v->errors()); //Lo podemos usar para visualizar los errores retornando un array
+            return redirect()->back() //Redireccionamos de vuelta al usuario
+                ->withErrors($v->errors()) //Enviamos la lista de errores al usuario
+                ->withInput(Request::except('password')); //Devolvemos los registros al formulario, excepto el password
+        }
+
+        $user = User::create(Request::all());
+        return redirect()->route('admin.users.index');
 	}
 
 	/**
@@ -78,7 +102,7 @@ class UsersController extends Controller {
 	public function update($id)
 	{
         $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
-        $user->fill(\Illuminate\Support\Facades\Request::all());
+        $user->fill(Request::all());
         $user->save();
 
         return redirect()->back(); //Ser devueltos a la pagina anterior, en este caso, la de edicion del usuario
