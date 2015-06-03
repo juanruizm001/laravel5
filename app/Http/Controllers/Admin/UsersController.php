@@ -65,7 +65,8 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-		//
+        $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
+		return view('admin.users.edit', compact('user'));
 	}
 
 	/**
@@ -76,7 +77,11 @@ class UsersController extends Controller {
 	 */
 	public function update($id)
 	{
-		//
+        $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
+        $user->fill(\Illuminate\Support\Facades\Request::all());
+        $user->save();
+
+        return redirect()->back(); //Ser devueltos a la pagina anterior, en este caso, la de edicion del usuario
 	}
 
 	/**

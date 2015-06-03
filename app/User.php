@@ -43,6 +43,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function setPasswordAttribute($value)
     {
-        $this->attributes['password'] = \Hash::make($value); //Con estoy siempre nos aseguraremos que la contraseña sea encriptada
+        if ( ! empty ($value))
+        {
+            $this->attributes['password'] = \Hash::make($value); //Con estoy siempre nos aseguraremos que la contraseña sea encriptada
+        }
     }
 }
