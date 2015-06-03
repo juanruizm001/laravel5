@@ -94,9 +94,12 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        User::destroy($id);
+        $user = User::findOrFail($id);
 
-        Session::flash('message', 'El registro fue eliminado'); //Se usa para enviar el mensaje una sola vez, luego la variable es eliminada
+        //User::destroy($id);
+        $user->delete();
+
+        Session::flash('message', $user->full_name . ' fue eliminado'); //Se usa para enviar el mensaje una sola vez, luego la variable es eliminada
 
         return redirect()->route('admin.users.index');
 
