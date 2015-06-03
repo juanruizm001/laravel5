@@ -8,6 +8,7 @@ use App\User;
 use App\Http\Requests\CreateUserRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\EditUserRequest;
 
@@ -93,7 +94,12 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-		//
+        User::destroy($id);
+
+        Session::flash('message', 'El registro fue eliminado'); //Se usa para enviar el mensaje una sola vez, luego la variable es eliminada
+
+        return redirect()->route('admin.users.index');
+
 	}
 
 }
