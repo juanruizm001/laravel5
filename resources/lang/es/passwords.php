@@ -13,7 +13,10 @@ return [
     |
     */
 
-    "invalid_credentials" => "El usuario y/o contraseña no es válido.",
+    "credentials" => array(
+        "invalid" => "El usuario y/o contraseña no es válido.",
+    ),
+
 
     "password" => "Las contraseñas deben contener al menos 6 caracteres y coincidir.",
 
