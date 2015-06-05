@@ -7,12 +7,24 @@ use App\User;
 //use Illuminate\Http\Request;
 use App\Http\Requests\CreateUserRequest;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
 use App\Http\Requests\EditUserRequest;
 
 class UsersController extends Controller {
+
+    public function __construct()
+    {
+        $this->beforeFilter('@findUser', ['only' => ['show', 'edit', 'update', 'destroy']]);
+    }
+
+    public function findUser(Route $route)
+    {
+        $this->user = User::findOrFail($route->getParameter('users'));
+
+    }
 
 	/**
 	 * Display a listing of the resource.
@@ -67,8 +79,7 @@ class UsersController extends Controller {
 	 */
 	public function edit($id)
 	{
-        $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
-		return view('admin.users.edit', compact('user'));
+        return view('admin.users.edit')->with('user', $this->user);
 	}
 
 	/**
@@ -79,9 +90,8 @@ class UsersController extends Controller {
 	 */
 	public function update(EditUserRequest $request, $id)
 	{
-        $user = User::findOrFail($id); //Metodo para cargar un solo usuario, y si no existe retorna un error 404
-        $user->fill($request->all());
-        $user->save();
+        $this->user->fill($request->all());
+        $this->user->save();
 
         return redirect()->back(); //Ser devueltos a la pagina anterior, en este caso, la de edicion del usuario
 	}
@@ -94,12 +104,10 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
-        $user = User::findOrFail($id);
-
         //User::destroy($id);
-        $user->delete();
+        $this->user->delete();
 
-        Session::flash('message', $user->full_name . ' fue eliminado'); //Se usa para enviar el mensaje una sola vez, luego la variable es eliminada
+        Session::flash('message', $this->user->full_name . ' fue eliminado'); //Se usa para enviar el mensaje una sola vez, luego la variable es eliminada
 
         return redirect()->route('admin.users.index');
 
