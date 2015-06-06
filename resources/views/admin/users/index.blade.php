@@ -25,4 +25,40 @@
             </div>
         </div>
     </div>
+
+{!! Form::open(['route' => ['admin.users.destroy', ':USER_ID'], 'method' => 'DELETE', 'id' => 'form-delete']) !!}
+{!! Form::close() !!}
+
 @endsection
+
+
+
+
+@section('scripts')
+<script>
+    $(document).ready(function(){
+        //alert("Documento Listo");
+        $('.btn-delete').click(function(e){
+
+            e.preventDefault(); //previene que se recargue la pagina
+
+            var row = $(this).parents('tr'); //obteniendo la fila
+            var id = row.data('id'); //obtenemos el id correspondiente
+            var form = $('#form-delete');
+            var url = form.attr('action').replace(':USER_ID', id);
+            var data = form.serialize();
+
+
+            $.post(url, data, function(result){
+                //alert(result);
+            });
+            //alert(data);
+            //alert(url);
+            //alert(id);
+            //alert('boton llamado');
+        })
+    });
+</script>
+
+
+@endsection()

@@ -104,6 +104,7 @@ class UsersController extends Controller {
 	 */
 	public function destroy($id)
 	{
+        //return $id;
         //User::destroy($id);
         $this->user->delete();
 
