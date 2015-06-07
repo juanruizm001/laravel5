@@ -50,7 +50,7 @@
 
 
             $.post(url, data, function(result){
-                //alert(result);
+                alert(result);
             });
             //alert(data);
             //alert(url);
