@@ -48,6 +48,7 @@
             var url = form.attr('action').replace(':USER_ID', id);
             var data = form.serialize();
 
+            row.fadeOut(); //Permite eliminar al usuario de la vista (lista)
 
             $.post(url, data, function(result){
                 alert(result);
