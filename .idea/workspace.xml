@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bbd304fe-da69-4ab9-93e3-be8b820d25a8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Kernel.php" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/User.php" afterPath="$PROJECT_DIR$/app/User.php" />
     </list>
     <ignored path="laravel5.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,8 +63,8 @@
       <file leaf-file-name="IsAdmin.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.74876845" vertical-offset="37" max-vertical-offset="850">
-              <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+            <state vertical-scroll-proportion="0.46962234" vertical-offset="241" max-vertical-offset="850">
+              <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
               <folding>
                 <element signature="e#38#50#0#PHP" expanded="true" />
               </folding>
@@ -72,21 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Authenticate.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.423077" vertical-offset="313" max-vertical-offset="935">
-              <caret line="43" column="13" selection-start-line="36" selection-start-column="12" selection-end-line="43" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1462">
-              <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+            <state vertical-scroll-proportion="-12.961538" vertical-offset="853" max-vertical-offset="1547">
+              <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -137,10 +127,10 @@
         <option value="$PROJECT_DIR$/config/options.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/partials/fields.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/admin/users/index.blade.php" />
-        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/UsersController.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
+        <option value="$PROJECT_DIR$/app/User.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php" />
       </list>
     </option>
@@ -855,15 +845,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.23077" vertical-offset="0" max-vertical-offset="1462">
-          <caret line="38" column="25" selection-start-line="38" selection-start-column="25" selection-end-line="38" selection-end-column="25" />
+        <state vertical-scroll-proportion="-12.961538" vertical-offset="853" max-vertical-offset="1547">
+          <caret line="74" column="9" selection-start-line="74" selection-start-column="9" selection-end-line="74" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/Authenticate.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.423077" vertical-offset="313" max-vertical-offset="935">
+        <state vertical-scroll-proportion="0.6446945" vertical-offset="313" max-vertical-offset="935">
           <caret line="43" column="13" selection-start-line="36" selection-start-column="12" selection-end-line="43" selection-end-column="13" />
           <folding />
         </state>
@@ -871,8 +861,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/IsAdmin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.74876845" vertical-offset="37" max-vertical-offset="850">
-          <caret line="29" column="78" selection-start-line="29" selection-start-column="78" selection-end-line="29" selection-end-column="78" />
+        <state vertical-scroll-proportion="0.46962234" vertical-offset="241" max-vertical-offset="850">
+          <caret line="31" column="16" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="16" />
           <folding>
             <element signature="e#38#50#0#PHP" expanded="true" />
           </folding>

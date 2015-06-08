@@ -25,7 +25,7 @@ class IsAdmin {
 	public function handle($request, Closure $next)
 	{
         //dd($this->auth->user());
-        if ($this->auth->user()->type != 'admin') //Si el usuario no es admin, será redigido
+        if ( ! $this->auth->user()->isAdmin()) //Si el usuario no es admin, será redigido
         {
             $this->auth->logout(); //Desconectamos al usuario y lo redirigimos
 

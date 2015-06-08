@@ -81,4 +81,9 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         $this->full_name = ;
         parent::save();
     }*/
+
+    public function isAdmin()
+    {
+        return $this->type == 'admin';
+    }
 }
