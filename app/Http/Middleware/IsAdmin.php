@@ -1,44 +1,11 @@
-<?php namespace App\Http\Middleware;
+<?php
 
-use Closure;
-use Illuminate\Contracts\Auth\Guard;
+namespace App\Http\Middleware;
 
-class IsAdmin {
+class IsAdmin extends IsType {
 
-    /**
-     * @var Guard
-     */
-    private $auth;
-
-    public function __construct(Guard $auth)
+    public function getType()
     {
-        $this->auth = $auth; //Nos traemos al usuario que está conectado
+        return 'admin';
     }
-
-	/**
-	 * Handle an incoming request.
-	 *
-	 * @param  \Illuminate\Http\Request  $request
-	 * @param  \Closure  $next
-	 * @return mixed
-	 */
-	public function handle($request, Closure $next)
-	{
-        //dd($this->auth->user());
-        if ( ! $this->auth->user()->isAdmin()) //Si el usuario no es admin, será redigido
-        {
-            $this->auth->logout(); //Desconectamos al usuario y lo redirigimos
-
-            if ($request->ajax())
-            {
-                return response('Unauthorized.', 401);
-            }
-            else
-            {
-                return redirect()->guest('auth/login');
-            }
-        }
-		return $next($request);
-	}
-
 }
