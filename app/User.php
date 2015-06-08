@@ -31,6 +31,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+    public static function filterAndPaginate($name, $type)
+    {
+        return User::name($name)
+            ->type($type)
+            ->orderBy('id', 'DESC')
+            ->paginate();
+    }
+
     public function profile()
     {
         return $this->hasOne('App\UserProfile');

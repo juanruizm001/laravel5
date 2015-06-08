@@ -27,7 +27,7 @@
                         </p>
                         <p>Hay {{ $users->total() }} registros, distribuidos en {{ $users->lastPage() }} páginas.</p>
                         @include('admin.users.partials.table')
-                        {!! $users->render() !!}
+                        {!! $users->appends(Request::all())->render() !!}
                     </div>
                 </div>
             </div>
