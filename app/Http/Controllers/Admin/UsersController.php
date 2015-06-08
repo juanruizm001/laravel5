@@ -111,7 +111,10 @@ class UsersController extends Controller {
         $message = $this->user->full_name . ' fué eliminado.';
         
         if ($request->ajax()) {
-            return $message;
+            return response()->json([
+                'ig' => $this->user->id,
+                'message' => $message
+            ]);
         }
 
         Session::flash('message', $message);
