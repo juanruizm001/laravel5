@@ -54,8 +54,23 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         if ($name != "")
         {
             //dd("scope: " . $name);
-            $query->where('full_name' , "LIKE", "%$name%"); //Concatenando nombre y apellido en la busqueda MySQL
+            $query->where('full_name' , "LIKE", "%$name%");
         }
 
     }
+
+    public function scopeType($query, $type)
+    {
+        $types = config('options.types');
+
+        if ($type != "" && isset($types[$type])) //Validamos que el tipo enviado por el usuario no esté vacio y que se encuentre dentro de nuestra seleccion de tipos
+        {
+            $query->where('type', '=', $type);
+        }
+    }
+/*    public function save()
+    {
+        $this->full_name = ;
+        parent::save();
+    }*/
 }

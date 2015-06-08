@@ -35,7 +35,7 @@ class UsersController extends Controller {
 	{
         //dd($request->get('name'));
         $request->get('name');
-		$users = User::name($request->get('name'))->orderBy('id', 'DESC')->paginate();
+		$users = User::name($request->get('name'))->type($request->get('type'))->orderBy('id', 'DESC')->paginate();
 
         //dd($users);
         return view('admin.users.index', compact('users'));
