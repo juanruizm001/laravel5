@@ -48,4 +48,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
             $this->attributes['password'] = \Hash::make($value); //Con estoy siempre nos aseguraremos que la contraseña sea encriptada
         }
     }
+
+    public function scopeName($query, $name)
+    {
+        if ($name != "")
+        {
+            //dd("scope: " . $name);
+            $query->where('first_name', $name);
+        }
+
+    }
 }
