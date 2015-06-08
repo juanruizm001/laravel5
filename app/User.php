@@ -54,7 +54,7 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         if ($name != "")
         {
             //dd("scope: " . $name);
-            $query->where(\DB::raw("CONCAT(first_name, ' ', last_name)") , "LIKE", "%$name%");
+            $query->where('full_name' , "LIKE", "%$name%"); //Concatenando nombre y apellido en la busqueda MySQL
         }
 
     }
